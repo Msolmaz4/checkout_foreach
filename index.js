@@ -220,21 +220,25 @@ console.log('deremeeeee')
 
 const data = [
   {
+    id:1,
     title:'elma',
     price:30,
     text:'With supporting text below as a natural lead-in to additional content.'
   },
   {
+    id:4,
     title:'armut',
     price:20,
     text:'With supporting text below as a natural lead-in to additional content.'
   },
   {
+    id:3,
     title:'ayva',
     price:5,
     text:'With supporting text below as a natural lead-in to additional content.'
   },
   {
+    id:2,
     title:'karpuz',
     price:75,
     text:'With supporting text below as a natural lead-in to additional content.'
@@ -260,40 +264,56 @@ iki.style.background="red"
 
 box.addEventListener("click", deg)
 
-/////////////////////////////
-const ekran = () => {
-  data.map((er) => {
+/////////////////////////////map ile yaptim hepsini ayni dicvde aladi bactru=iklde yapmayincada ayni oldu
+// const ekran = () => {
+//   data.map((er) => {
   
-    let newDiv2 = document.createElement('div')
-    newDiv2.setAttribute('class','card-body')
-    let h5 = document.createElement('h')
-    h5.setAttribute('class','card-title')
-    h5.innerText = er.title
-    console.log(er.title)
-    let p1 = document.createElement('p')
-    p1.setAttribute('class','card-text')
-    p1.innerText = er.text
-    console.log(er.text)
-    let p = document.createElement('p')
-    p.setAttribute('class','price')
-    p.innerText= er.price
-    let a = document.createElement('a')
-    a.setAttribute('class','btn btn-primary')
+//     let newDiv2 = document.createElement('div')
+//     newDiv2.setAttribute('class','card-body')
+//     let h5 = document.createElement('h')
+//     h5.setAttribute('class','card-title')
+//     h5.innerText = `${er.title}`
+//     console.log(er.title)
+//     let p1 = document.createElement('p')
+//     p1.setAttribute('class','card-text')
+//     p1.innerText = `${er.text}`
+//     console.log(er.text)
+//     let p = document.createElement('p')
+//     p.setAttribute('class','price')
+//     p.innerText= `${er.price}`
+//     let a = document.createElement('a')
+//     a.setAttribute('class','btn btn-primary')
 
-    newDiv2.appendChild(h5)
-    newDiv2.appendChild(p1)
-    newDiv2.appendChild(p)
-    newDiv2.appendChild(a)
+//     newDiv2.appendChild(h5)
+//     newDiv2.appendChild(p1)
+//     newDiv2.appendChild(p)
+//     newDiv2.appendChild(a)
    
-    card1.appendChild(newDiv2)
+//     card1.appendChild(newDiv2)
    
-  });
+//   });
+// }
+
+
+// ekran();
+
+
+const ekran = ()=>{
+  data.forEach((er,key)=>{
+   
+    let newDiv = document.createElement('div')
+    newDiv.setAttribute('class','card-body')
+    newDiv.innerHTML = `
+     <h5 class='card-title'>${er.title}</h5>
+     <p class="card-text">${er.text}</p>
+  <p>${er.price}</p>
+  <a href="#" class="btn btn-primary">Add</a>
+    `
+    card1.appendChild(newDiv)
+  })
 }
 
-
-ekran();
-
-
+ekran()
 
 
 

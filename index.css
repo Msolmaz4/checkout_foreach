@@ -6,16 +6,15 @@
 
 .ilk{
   height: 100vh;
-display: inline-block;
+  display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+
+  border: 2px solid red;
 
 
 }
 .card{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin: 5px;
-  padding-bottom: 5px;
-  
+  position: relative;
+
 }
