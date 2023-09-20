@@ -220,25 +220,25 @@ console.log('deremeeeee')
 
 const data = [
   {
-    id:1,
+    id:0,
     title:'elma',
     price:30,
     text:'With supporting text below as a natural lead-in to additional content.'
   },
   {
-    id:4,
+    id:1,
     title:'armut',
     price:20,
     text:'With supporting text below as a natural lead-in to additional content.'
   },
   {
-    id:3,
+    id:2,
     title:'ayva',
     price:5,
     text:'With supporting text below as a natural lead-in to additional content.'
   },
   {
-    id:2,
+    id:3,
     title:'karpuz',
     price:75,
     text:'With supporting text below as a natural lead-in to additional content.'
@@ -251,6 +251,7 @@ const box = document.querySelector('.box')
 //////////////// buton 
 const iki = document.querySelector('.iki')
 const card1 = document.querySelector('.dere')
+const artma = document.querySelector('.artma')
 
 let rtt = true
 
@@ -298,9 +299,18 @@ box.addEventListener("click", deg)
 
 // ekran();
 
+{/* <div class="card" style="width: 18rem;">
+<div class="card-body">
+  <h5 class="card-title">Special title treatment</h5>
+  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  <p>150$</p>
+  <a href="#" class="btn btn-primary">Add</a>
+</div>
+</div> */}
 
 const ekran = ()=>{
   data.forEach((er,key)=>{
+    console.log(er)
    
     let newDiv = document.createElement('div')
     newDiv.setAttribute('class','son')
@@ -316,21 +326,54 @@ const ekran = ()=>{
 
 ekran()
 
+let listCards = []
+
+
+
 const hesapla=(id)=>{
-console.log(id)
+  console.log(id)
+if(listCards[id] == null ){
+   console.log('icerdeyiz',id)
+   listCards[id] = data[id]
+   console.log(listCards,'lisst')
+   listCards[id].artma = 1
+  
+}
+reload()
+}
+
+const reload = () =>{
+  iki.innerHTML = '';
+  let count = 0;
+  let totalPrice = 0;
+
+
+   listCards.map((value , id)=>{
+    console.log(value,'reload')
+   
+       if(value != null){
+        let newDiv = document.createElement('div')
+        newDiv.innerHTML=`
+       
+        <div>${value.title}</div>
+        <div>${value.price}</div>
+
+        <div>
+         
+        </div>
+        
+        `
+        iki.appendChild(newDiv)
+       }
+   }
+    
+
+      
+   )
+
 }
 
 
 
 
-
-
-{/* <div class="card" style="width: 18rem;">
-<div class="card-body">
-  <h5 class="card-title">Special title treatment</h5>
-  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  <p>150$</p>
-  <a href="#" class="btn btn-primary">Add</a>
-</div>
-</div> */}
 
