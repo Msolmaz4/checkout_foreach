@@ -243,13 +243,14 @@ const data = [
     price:75,
     text:'With supporting text below as a natural lead-in to additional content.'
   }
+
 ]
 
 const ilk = document.querySelector('.ilk')
 const box = document.querySelector('.box')
 //////////////// buton 
 const iki = document.querySelector('.iki')
-const card1 = document.querySelector('.card')
+const card1 = document.querySelector('.dere')
 
 let rtt = true
 
@@ -302,12 +303,12 @@ const ekran = ()=>{
   data.forEach((er,key)=>{
    
     let newDiv = document.createElement('div')
-    newDiv.setAttribute('class','card-body')
+    newDiv.setAttribute('class','son')
     newDiv.innerHTML = `
-     <h5 class='card-title'>${er.title}</h5>
-     <p class="card-text">${er.text}</p>
-  <p>${er.price}</p>
-  <a href="#" class="btn btn-primary">Add</a>
+     <h5 class='ytr'>${er.title}</h5>
+     <p class="uyt">${er.text}</p>
+     <p>${er.price}$</p>
+     <a href="#" class="btn btn-primary">Add</a>
     `
     card1.appendChild(newDiv)
   })
@@ -330,3 +331,4 @@ ekran()
   <a href="#" class="btn btn-primary">Add</a>
 </div>
 </div> */}
+

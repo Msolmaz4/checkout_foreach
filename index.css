@@ -3,18 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.ert{
+  display: flex;
+   border: 2px solid black;
+}
 .ilk{
   height: 100vh;
-  display: grid;
-    grid-template-columns: 1fr 50px;
-    margin-top: 50px;
-
   border: 2px solid red;
-
-
+  width: 60%;
 }
-.card{
-  position: relative;
-
+.iki{
+  width: 39%;
+}
+.dere{
+display: flex; 
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+border: 5x solid black;
+}
+.son{
+  border: 2px solid black;
+  padding: 5px;
+  margin: 5px;
+  width: 400px;
+  
+}
+.ytr{
+  text-align: center;
+}
+p{
+  text-align: center;
 }
