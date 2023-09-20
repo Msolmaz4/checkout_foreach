@@ -308,7 +308,7 @@ const ekran = ()=>{
      <h5 class='ytr'>${er.title}</h5>
      <p class="uyt">${er.text}</p>
      <p>${er.price}$</p>
-     <a href="#" class="btn btn-primary">Add</a>
+     <button onclick = 'hesapla(${er.id})' class="btn btn-primary">Add</button>
     `
     card1.appendChild(newDiv)
   })
@@ -316,7 +316,9 @@ const ekran = ()=>{
 
 ekran()
 
-
+const hesapla=(id)=>{
+console.log(id)
+}
 
 
 
