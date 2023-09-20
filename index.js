@@ -252,7 +252,7 @@ const box = document.querySelector('.box')
 const iki = document.querySelector('.iki')
 const card1 = document.querySelector('.dere')
 const artma = document.querySelector('.artma')
-
+const opr = document.querySelector('.top')
 let rtt = true
 
 const deg = ()=>{
@@ -336,7 +336,7 @@ if(listCards[id] == null ){
    console.log('icerdeyiz',id)
    listCards[id] = data[id]
    console.log(listCards,'lisst')
-   listCards[id].artma = 1
+   listCards[id].art = 1
   
 }
 reload()
@@ -350,7 +350,10 @@ const reload = () =>{
 
    listCards.map((value , id)=>{
     console.log(value,'reload')
-   
+
+    totalPrice = totalPrice + value.price
+    count = count + value.art
+
        if(value != null){
         let newDiv = document.createElement('div')
         newDiv.innerHTML=`
@@ -359,21 +362,34 @@ const reload = () =>{
         <div>${value.price}</div>
 
         <div>
-         
+        <button onclick ='deger(${id},${value.art-1})'> - </button>
+        <div>${value.art}</div>
+         <button onclick ='deger(${id},${value.art + 1})'> + </button>
+        
         </div>
         
         `
         iki.appendChild(newDiv)
-       }
-   }
-    
+       }//if
+   }//map
+  )//map
 
-      
-   )
+  artma.innerHTML = count
+  opr.innerHTML = totalPrice
 
+}//funct
+
+
+const deger = (id, art)=>{
+  if(art == 0){
+    delete listCards[id]
+  }
+  else{
+    listCards[id].art = art
+    listCards[id].price = art*data[id].price
+    console.log(listCards)
+  }
+reload()
 }
-
-
-
 
 
